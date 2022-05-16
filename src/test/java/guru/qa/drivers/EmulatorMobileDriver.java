@@ -29,11 +29,18 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName("Android");
-        options.setDeviceName("Pixel 5 API 30");
+        // options.setDeviceName("Pixel 5 API 30");
+        options.setDeviceName("4a61ae4");
         options.setPlatformVersion("11.0");
         options.setApp(app.getAbsolutePath());
-        options.setAppPackage("org.wikipedia.alpha");
-        options.setAppActivity("org.wikipedia.main.MainActivity");
+        options.setLocale("en");
+        options.setLanguage("en");
+
+//        options.setAppPackage("org.wikipedia.alpha");
+//        options.setAppActivity("org.wikipedia.main.MainActivity");
+
+        options.setAppPackage("ru.anbn.testapplication");
+        options.setAppActivity("ru.anbn.testapplication.MainActivity");
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
