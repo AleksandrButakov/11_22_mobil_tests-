@@ -33,14 +33,16 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         options.setDeviceName("4a61ae4");
         options.setPlatformVersion("11.0");
         options.setApp(app.getAbsolutePath());
-        options.setLocale("en");
-        options.setLanguage("en");
+        //options.setLocale("en");
+        //options.setLanguage("en");
 
-//        options.setAppPackage("org.wikipedia.alpha");
-//        options.setAppActivity("org.wikipedia.main.MainActivity");
+        // options.setAppPackage("org.wikipedia.alpha");
+        // options.setAppActivity("org.wikipedia.main.MainActivity");
 
-        options.setAppPackage("ru.anbn.testapplication");
-        options.setAppActivity("ru.anbn.testapplication.MainActivity");
+        // [2] options.setAppPackage("ru.anbn.testapplication");
+        options.setAppPackage("com.anbn.pinout");
+        // [2] options.setAppActivity("ru.anbn.testapplication.MainActivity");
+        options.setAppActivity("com.anbn.pinout.MainActivity");
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
@@ -54,9 +56,13 @@ public class EmulatorMobileDriver implements WebDriverProvider {
     }
 
     private File getApp() {
-        String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
-        String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/releases/" +
-                "download/latest/app-alpha-universal-release.apk";
+        //String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
+        String appPath = "src/test/resources/apk/app-debug.apk";
+
+        //String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/releases/" +
+        //      "download/latest/app-alpha-universal-release.apk";
+
+        String appUrl = "https://github.com/AleksandrButakov/Pinout/raw/master/app/build/intermediates/apk/debug/app-debug.apk";
 
         File app = new File(appPath);
         if (!app.exists()) {
