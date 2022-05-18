@@ -27,7 +27,8 @@ public class AndroidSelenideTests extends TestBase {
         });
 
         step("Checking Main menu, Search", () -> {
-            $(AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
+            // $(AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
+            $(AppiumBy.xpath("//android.widget.ImageView")).click();
             $$(AppiumBy.id("com.anbn.pinout:id/title")).findBy(text("Строка")).click();
             $(AppiumBy.id("com.anbn.pinout:id/textView1")).shouldHave(text("Для поиска необходимого оборудо"));
             $(AppiumBy.id("android:id/search_button")).click();

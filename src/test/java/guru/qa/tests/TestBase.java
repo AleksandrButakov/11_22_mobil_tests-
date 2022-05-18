@@ -15,6 +15,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static guru.qa.helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.remote.HttpSessionId.getSessionId;
+
 
 public class TestBase {
 
